@@ -34,4 +34,10 @@ public class PostagemService {
 		buscarPorId(id);
 		repo.deleteById(id);
 	}
+	
+	public Postagem editar(Postagem obj) {
+		Postagem newObj = buscarPorId(obj.getId());
+		modificar(obj,newObj);
+		return repo.save(newObj);
+	}
 }
