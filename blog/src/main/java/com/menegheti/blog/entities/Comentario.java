@@ -63,5 +63,4 @@ public class Comentario implements Serializable{
 		return "Comentario [id=" + id + ", texto=" + texto + "]";
 	}
 	
-	
 }
