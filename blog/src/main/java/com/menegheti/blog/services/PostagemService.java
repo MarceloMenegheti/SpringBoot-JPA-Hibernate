@@ -15,5 +15,9 @@ public class PostagemService {
 		return repo.findAll();
 	}
 	
-
+	public Postagem buscarPorId(int id) {
+		Optional<Postagem> obj = repo.findById(id);
+		return obj.orElseThrow(() -> new ObjetoNaoEncontrado(
+				"Objeto nao encontrado! Id: " + id + ", tipo: " + Postagem.class.getName()));
+	}
 }
