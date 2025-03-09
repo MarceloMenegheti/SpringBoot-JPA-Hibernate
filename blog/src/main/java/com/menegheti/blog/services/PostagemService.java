@@ -40,4 +40,11 @@ public class PostagemService {
 		modificar(obj,newObj);
 		return repo.save(newObj);
 	}
+	
+	private void modificar(Postagem obj,Postagem newObj) {
+		newObj.setAutor(obj.getAutor());
+		newObj.setComentarios(obj.getComentarios());
+		newObj.setTexto(obj.getTexto());
+		newObj.setTitulo(obj.getTitulo());
+	}
 }
