@@ -11,5 +11,9 @@ public class PostagemService {
 	@Autowired
 	private PostagemRepository repo;
 	
+	public List<Postagem> buscarTodos(){
+		return repo.findAll();
+	}
+	
 
 }
