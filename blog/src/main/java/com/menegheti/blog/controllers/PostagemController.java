@@ -39,8 +39,21 @@ public class PostagemController {
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public ResponseEntity<Postagem> buscarPorId(Integer id) {
+	public ResponseEntity<Postagem> buscarPorId(@PathVariable Integer id) {
 		Postagem obj = postagemService.buscarPorId(id);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Void> editar(@RequestBody Postagem obj,@PathVariable Integer id) {
+		obj.setId(id);
+		obj = postagemService.editar(obj);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Void> deletar(@PathVariable Integer id) {
+		postagemService.deletar(id);
+		return ResponseEntity.noContent().build();
+		}
 }
