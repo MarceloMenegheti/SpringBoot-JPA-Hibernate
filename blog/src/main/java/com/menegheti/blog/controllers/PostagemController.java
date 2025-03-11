@@ -55,5 +55,6 @@ public class PostagemController {
 	public ResponseEntity<Void> deletar(@PathVariable Integer id) {
 		postagemService.deletar(id);
 		return ResponseEntity.noContent().build();
-		}
+		
+	}
 }
