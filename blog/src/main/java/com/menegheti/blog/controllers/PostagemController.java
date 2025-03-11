@@ -37,4 +37,10 @@ public class PostagemController {
 		List<Postagem> list = postagemService.buscarTodos();
 		return ResponseEntity.ok().body(list);
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public ResponseEntity<Postagem> buscarPorId(Integer id) {
+		Postagem obj = postagemService.buscarPorId(id);
+		return ResponseEntity.ok().body(obj);
+	}
 }
