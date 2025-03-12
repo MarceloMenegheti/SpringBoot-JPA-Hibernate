@@ -7,17 +7,12 @@ Este projeto é um sistema de blog simples que permite a criação, leitura, atu
 O objetivo deste projeto é desenvolver uma aplicação de blog que permita realizar operações CRUD(Create, Read, Update, Delete) para gerenciar postagens. 
 A aplicação foi criada para praticar e demonstrar conhecimentos em Spring Boot, JPA/Hibernate e boas práticas em arquitetura de software.
 
+## 📐 Modelo Relacional
 
-## 🛠️ Tecnologias Utilizadas 
+Abaixo está o diagrama de relacionamento entre as entidades **Autor**, **Postagem** e **Comentario** no sistema:
 
-- **Java 21**
-- **Spring Boot**
-  - Spring Boot Web
-  - Spring Data JPA (Hibernate)
-- **H2 Database**: Banco de dados em memória para desenvolvimento e testes.
-- **Lombok**: Para reduzir boilerplate code com anotações como `@Data`, `@Getter`, `@Setter`, etc.
-- **Maven**: Para gerenciamento de dependências.
-- **Postman**: Para testar os endpoints da API.
+![Captura de tela 2025-03-11 090517](https://github.com/user-attachments/assets/f5cb58cd-4456-4a33-bc74-ba00ea0a5c76)
+
 
 ## 🗂️ Estrutura do Projeto
 
@@ -54,3 +49,15 @@ A aplicação foi criada para praticar e demonstrar conhecimentos em Spring Boot
 | POST   | `/api/postagens`      | Cria uma nova postagem   |
 | PUT    | `/api/postagens/{id}` | Atualiza uma postagem    |
 | DELETE | `/api/postagens/{id}` | Remove uma postagem      |
+
+## 🛠️ Tecnologias Utilizadas 
+
+- **Java 21**
+- **Spring Boot**
+  - Spring Boot Web
+  - Spring Data JPA (Hibernate)
+- **H2 Database**: Banco de dados em memória para desenvolvimento e testes.
+- **Lombok**: Para reduzir boilerplate code com anotações como `@Data`, `@Getter`, `@Setter`, etc.
+- **Maven**: Para gerenciamento de dependências.
+- **Postman**: Para testar os endpoints da API.
+
