@@ -11,15 +11,16 @@ public class Order implements Serializable{
 	private Long id;
 	private Instant moment;
 	
-
+	private User client;
 
 	public Order() {
 	}
 
-	public Order(Long id, Instant moment) {
+	public Order(Long id, Instant moment, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
+		this.client = client;
 	}
 
 	public Long getId() {
@@ -38,7 +39,14 @@ public class Order implements Serializable{
 		this.moment = moment;
 	}
 
+	public User getClient() {
+		return client;
+	}
 
+	public void setClient(User client) {
+		this.client = client;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
