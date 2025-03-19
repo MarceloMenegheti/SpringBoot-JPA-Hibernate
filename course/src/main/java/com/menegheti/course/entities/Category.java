@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,7 +23,8 @@ public class Category implements Serializable{
 	private Long id;
 	private String name;
 	
-	private Set<Product> produtcs = new HashSet<>();
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
 	
 	public Category() {
 	}
@@ -50,7 +52,7 @@ public class Category implements Serializable{
 	}
 
 	public Set<Product> getProdutcs() {
-		return produtcs;
+		return products;
 	}
 	
 	@Override
