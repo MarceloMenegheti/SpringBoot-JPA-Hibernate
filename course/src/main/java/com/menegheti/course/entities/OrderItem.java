@@ -3,6 +3,7 @@ package com.menegheti.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.menegheti.course.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -32,6 +33,7 @@ public class OrderItem implements Serializable{
 		this.price = price;
 	}
 
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
