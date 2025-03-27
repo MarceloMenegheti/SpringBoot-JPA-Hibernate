@@ -65,5 +65,4 @@ public class StantardError implements Serializable {
 		this.path = path;
 	}
 	
-	
 }
