@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.menegheti.course.entities.User;
 import com.menegheti.course.repositories.UserRepository;
+import com.menegheti.course.services.exceptions.DatabaseException;
 import com.menegheti.course.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -36,6 +37,8 @@ public class UserService {
 			repository.deleteById(id);
 		}catch(EmptyResultDataAccessException e) {
 			throw new ResourceNotFoundException(id);
+		}catch(DataIntegrityViolationException e) {
+			throw new DatabaseException(e.getMessage());
 		}
 		
 	}
