@@ -12,6 +12,7 @@ import com.menegheti.docker.entity.Convidado;
 
 @RestController
 @RequestMapping("/")
+@CrossOrigin("*")
 public class ConvidadoController {
 	
 	@GetMapping
