@@ -1,7 +1,15 @@
-FROM openjdk:17
+FROM maven:3.9.5-eclipse-temurin-21 AS build
+
+WORKDIR /build
+
+COPY . .
+
+RUN mvn clean package -DskipTests
+
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-COPY ./target/docker-0.0.1-SNAPSHOT.jar .
+COPY --from=build ./build/target/*.jar ./docker.jar
 
-ENTRYPOINT java -jar docker-0.0.1-SNAPSHOT.jar
+ENTRYPOINT java -jar docker.jar
